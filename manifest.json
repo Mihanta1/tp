@@ -1,0 +1,29 @@
+{
+    "lang":"en-us",
+    "name":"Movies",
+    "short_name":"Mvs",
+    "description":"Movies idk",
+    "start_url":"/",
+    "background_color": "#2b2b2b",
+    "theme_color":"#2b2b2b",
+    "orientation":"any",
+    "display":"standalone",
+    "icons":[
+        {
+            "src": "./movie.png",
+            "sizes":"512x512"
+        },{
+            "src": "./movie.png",
+            "sizes":"192x192",
+            "type":"image/png",
+            "purpose":"any maskable"
+        },
+        {
+            
+            "src": "./movie.png",
+            "sizes":"64x64 32x32 24x24 16x16",
+            "type":"image/png"
+        }
+        
+    ]
+}

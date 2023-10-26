@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#317EFB">
+    <link rel="stylesheet" href="./styles/main.css">
+    <link rel="manifest" href="manifest.json">
+    <title>Movies</title>
+</head>
+
+<body>
+    <div class="main-container">
+        <h1 class="m-title">Liste des Films</h1>
+        <div class="m-btn">
+            <button id="btn-show">Afficher la liste des films</button>
+        </div>
+        <div class="m-search">
+            <input type="text" id="searchInput" placeholder="Rechercher un film...">
+        </div>
+        <div class="m-list">
+            <ul id="movieList"></ul>
+        </div>
+    </div>
+
+    <script src="./js/movies.js"></script>
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('./js/sw.js')
+        }
+    </script>
+</body>
+
+</html>
