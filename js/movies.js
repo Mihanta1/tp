@@ -17,7 +17,11 @@ function getMovieList(){
                     movieListElement.appendChild(li);
                 });
             })
-            .catch(error => console.error('Erreur :', error));
+            .catch(()=>{
+                if (!navigator.onLine){
+                    window.location.href='https://narovana-randriatiana.vercel.app/fallBack.html'
+                }
+            })
 }
 document.getElementById('btn-show').addEventListener('click', getMovieList);
 
