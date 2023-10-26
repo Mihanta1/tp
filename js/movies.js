@@ -45,7 +45,7 @@ function searchMovies(query) {
         })
         .catch(()=>{
             if (!navigator.onLine){
-                window.location.href='http://127.0.0.1:8000/fallBack.html'
+                window.location.href='https://narovana-randriatiana.vercel.app/fallBack.html'
             }
         })
 }

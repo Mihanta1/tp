@@ -56,8 +56,8 @@ body {
 
 .m-list li {
   margin: 1vw;
-  width: 20vw;
-  height: 65vh;
+  width: 65vw;
+  height: 50vh;
   text-align: center;
   box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
   background-color: #fff;
