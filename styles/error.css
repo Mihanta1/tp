@@ -21,6 +21,9 @@
     height: auto;
 }
 
+.f-error .f-p{
+    margin-top: 15vh;
+}
 .f-error p{
     text-align: center;
     font-weight: bold;
