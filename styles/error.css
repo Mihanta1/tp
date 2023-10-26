@@ -1,0 +1,27 @@
+.f-error{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.f-error h2{
+    color: #9A3B3B;
+    text-align: center;
+}
+
+.f-img{
+    width: 25vw;
+    height: 25vh;
+}
+
+.f-img img{
+    object-fit: cover;
+    width: 100%;
+    height: auto;
+}
+
+.f-error p{
+    text-align: center;
+    font-weight: bold;
+}
