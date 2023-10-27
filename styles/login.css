@@ -39,9 +39,15 @@ body{
 }
 
 @media (max-width :768px){
+    body{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
 .l-container{
-    width: 100vw;
-    height: 90vh;
+    width: 80vw;
+    height: 70vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -57,13 +63,16 @@ body{
 }
 
 @media (max-width :480px){
-    .l-container{
-        width: 100vw;
-        height: 90vh;
+    body{
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
+    }
+    .l-container{
+        width: 80vw;
+        height: 70vh;
+  
     }
     
     .l-btn{
