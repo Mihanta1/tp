@@ -1,35 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#317EFB">
-    <link rel="stylesheet" href="./styles/main.css">
-    <link rel="manifest" href="manifest.json">
-    <title>Movies</title>
-</head>
-
-<body>
-    <div class="main-container">
-        <h1 class="m-title">Liste des Films</h1>
-        <div class="m-btn">
-            <button id="btn-show">Afficher la liste des films</button>
-        </div>
-        <div class="m-search">
-            <input type="text" id="searchInput" placeholder="Rechercher un film...">
-        </div>
-        <div class="m-list">
-            <ul id="movieList"></ul>
-        </div>
-    </div>
-
-    <script src="./js/movies.js"></script>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles/login.css" />
     <script>
-        if ('serviceWorker' in navigator) {
-            navigator.serviceWorker.register('./js/sw.js')
-        }
-    </script>
-</body>
+      const apiKey = "96d2c79a685de50fdecbf8abfd028da7";
+      let requestToken = null; 
 
+      async function createRequestToken() {
+        try {
+          const response = await fetch(
+            `https://api.themoviedb.org/3/authentication/token/new?api_key=${apiKey}`
+          );
+
+          if (response.ok) {
+            alert("Go check the user list");
+            const data = await response.json();
+            requestToken = data.request_token;
+            console.log("Request token created:", requestToken);
+          }
+        } catch (error) {
+          console.error("Failed to create request token:", error);
+        }
+      }
+
+      function askUserForPermission() {
+        // Check if we have a request token
+        if (requestToken) {
+          const redirectURL = "https://narovana-randriatiana.vercel.app/home.html";
+          const authURL = `https://www.themoviedb.org/authenticate/${requestToken}?redirect_to=${redirectURL}`;
+
+          window.location.href = authURL;
+        } else {
+          console.error("Request token is missing. Please create one first.");
+        }
+      }
+
+      async function createSession() {
+        if (requestToken) {
+          const user_name = document.getElementById("user_name").value;
+          const user_password = document.getElementById("user_pass").value;
+
+          try {
+            const response = await fetch(
+              "https://api.themoviedb.org/3/authentication/token/validate_with_login",
+              {
+                method: "POST",
+                headers: {
+                  "Content-Type": "application/json;charset=utf-8",
+                },
+                body: JSON.stringify({
+                  api_key: apiKey,
+                  request_token: requestToken,
+                }),
+              }
+            );
+
+            if (!response.ok) {
+              throw new Error(`HTTP error: ${response.status}`);
+            }
+
+            const data = await response.json();
+            console.log("Session created successfully:", data);
+          } catch (error) {
+            console.error("Failed to create session:", error);
+          }
+        } else {
+          console.error("Request token is missing. Please create one first.");
+        }
+      }
+    </script>
+    <title>Movies</title>
+  </head>
+  <body>
+    <div class="l-container">
+     
+        <button class="l-btn" type="button" onclick="createRequestToken()">
+          Create Request Token
+        </button>
+        <button class="l-btn" type="button" onclick="askUserForPermission()">
+          Ask User for Permission
+        </button>
+        <button class="l-btn" type="button" onclick="createSession()">Create Session</button>
+      
+    </div>
+  </body>
 </html>

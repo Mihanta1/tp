@@ -9,7 +9,9 @@ self.addEventListener('install',(event)=>{
                 './movies.js',
                 '../styles/main.css',
                 '../styles/error.css',
-                '/fallBack.html'
+                '/fallBack.html',
+                '../styles/login.css',
+                '/login.html'
             ])
         })
     )
