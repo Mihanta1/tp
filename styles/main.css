@@ -72,14 +72,14 @@ body {
   border-top-right-radius: 8px;
 }
 
-/* Media Queries */
+
 @media (max-width :768px) {
    .main-container {
       width :100vw; 
    }
    .m-list li {
-      width :45vw; 
-      height :45vh; 
+      width :35vw; 
+      height :55vh; 
    }
    #searchInput{
       width :50vw; 
@@ -88,7 +88,7 @@ body {
 @media (max-width :480px) {
    .m-list li {
       width :90vw; 
-      height :45vh; 
+      height :55vh; 
    }
    #searchInput{
       width :80vw; 

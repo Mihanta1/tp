@@ -5,7 +5,7 @@ body{
 }
 
 .l-container{
-    margin-top: 20vh;
+    margin-top: 10vh;
     height: 50vh;
     width: 25vw;
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
@@ -55,7 +55,6 @@ body{
 
 @media (max-width :480px){
     .l-container{
-    margin-top: 20vh;
         width: 100vw;
         height: 90vh;
     }
