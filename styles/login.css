@@ -40,9 +40,12 @@ body{
 
 @media (max-width :768px){
 .l-container{
-    margin-top: 20vh;
     width: 100vw;
     height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 
@@ -57,6 +60,10 @@ body{
     .l-container{
         width: 100vw;
         height: 90vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
     }
     
     .l-btn{
