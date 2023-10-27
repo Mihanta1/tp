@@ -15,7 +15,7 @@
           );
 
           if (response.ok) {
-            alert("Go check the user list");
+            alert("Click on the button to ask for permission");
             const data = await response.json();
             requestToken = data.request_token;
             console.log("Request token created:", requestToken);
@@ -26,7 +26,6 @@
       }
 
       function askUserForPermission() {
-        // Check if we have a request token
         if (requestToken) {
           const redirectURL = "https://narovana-randriatiana.vercel.app/home.html";
           const authURL = `https://www.themoviedb.org/authenticate/${requestToken}?redirect_to=${redirectURL}`;
