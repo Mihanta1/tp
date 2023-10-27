@@ -89,6 +89,7 @@ body {
    .m-list li {
       width :90vw; 
       height :55vh; 
+      gap: 4vh;
    }
    #searchInput{
       width :80vw; 
